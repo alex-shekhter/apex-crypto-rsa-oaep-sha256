@@ -23,7 +23,7 @@ UUID=$(uuidgen)
 keyName() {
     local suffix=$1
 
-    echo "${KEY_ID_PREFIX}-$APPID-${UUID}-${suffix}"
+    echo "${KEY_ID_PREFIX}-${APPID}-${UUID}-${suffix}"
 }
 
 PRIVATE_KEY_FILE=$(keyName "private.pem")
