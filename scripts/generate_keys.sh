@@ -4,8 +4,7 @@
 #
 ### generate_keys.sh
 #
-#   Utility to generate RSA keys used for End-to-end 
-#   encryption for AT&T
+#   Utility to generate RSA keys
 #
 #   INPUT PARAMTERS:
 #
@@ -15,14 +14,16 @@
 ###########################################################
 
 KEY_ID_PREFIX=${1:?KEY_ID_PREFIX (SF ORG FQDN) is a mandatory parameter}
-KEY_SIZE=${2:-4096}
+KEY_SIZE=${2:-2048}
+APPID=${3:-SFAPP}
 
 UUID=$(uuidgen)
+
 
 keyName() {
     local suffix=$1
 
-    echo "${KEY_ID_PREFIX}-SFORCECC-${UUID}-${suffix}"
+    echo "${KEY_ID_PREFIX}-$APPID-${UUID}-${suffix}"
 }
 
 PRIVATE_KEY_FILE=$(keyName "private.pem")
