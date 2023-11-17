@@ -44,11 +44,11 @@ private class CryptoRSA_1_v2_Test {
     );
     CryptoRSA_1_v2 rsa = new CryptoRSA_1_v2( key );
     String cipherText = rsa.encrypt( CLEAR_TEXT );
-    String clearText = rsa.decrypt( cipherText );
+    String clearTxt = rsa.decrypt( cipherText );
     Test.stopTest();
     System.assert(
-      CLEAR_TEXT.equals( clearText ), 
-      'Encrypt/Decrypt test failed: cipherText: ' + cipherText + '; clearText: ' + clearText 
+      CLEAR_TEXT.equals( clearTxt ), 
+      'Encrypt/Decrypt test failed: cipherText: ' + cipherText + '; clearText: ' + clearTxt 
     );
   }
 }
